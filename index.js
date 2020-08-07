@@ -1,11 +1,16 @@
 const axios = require('axios').default;
 const WAE = require('web-auto-extractor').default;
 
-const url = `https://www.stadiumgoods.com/air-jordan-1-retro-high-og-gs-royal-toe-575441-041`;
+const sku = "CU0449-601";
 
 // gtin12 == upc-a code
-axios.get(url).then(resp => {
+// stadium goods automatically redirects to a specific product if theres a matching sky
+axios.get(`https://www.stadiumgoods.com/catalogsearch/result/?q=${sku.replace('-', ' ')}`).then(resp => {
 	const parsedSchema = WAE().parse(resp.data);
-	const productData = parsedSchema.microdata['Product'][0];
-	console.log(JSON.stringify(productData, null, 4));
+	if (!!parsedSchema.microdata['Product']) {
+		const productData = parsedSchema.microdata['Product'][0];
+		console.log(JSON.stringify(productData, null, 4));
+	} else {
+		console.log("Invalid sku");
+	}
 });
