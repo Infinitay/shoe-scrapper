@@ -1,17 +1,34 @@
 {
-  "name": "sku-scrapper",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "web-auto-extractor": "^1.0.17"
-  }
+	"name": "shoe-scrapper",
+	"version": "1.0.0",
+	"description": "Retrieves relevant data of a shoe such as shoe name, gender, sizes, colorway, and much more from Stadium Goods given the model, or sku, of a shoe.",
+	"main": "index.js",
+	"scripts": {
+		"start": "node sku-scrapper.js"
+	},
+	"keywords": [
+		"shoe",
+		"hypebeast",
+		"scrape",
+		"scrapper",
+		"sku",
+		"upc",
+		"gtin",
+		"stadium goods"
+	],
+	"author": "infinitay",
+	"license": "MIT",
+	"dependencies": {
+		"@rane/web-auto-extractor": "^2.0.6",
+		"axios": "^0.19.2"
+	},
+	"devDependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Infinitay/shoe-scrapper.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Infinitay/shoe-scrapper/issues"
+	},
+	"homepage": "https://github.com/Infinitay/shoe-scrapper#readme"
 }
